@@ -1,0 +1,99 @@
+﻿@model TrainDetails
+@{
+    ViewData["Title"] = "Update";
+    Layout = "_AdminLayout";
+}
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .login {
+        max-width: 800px;
+        margin: 10px auto 0;
+        padding: 30px;
+        padding-top: 0;
+        border: 1px solid #6C63FF;
+        box-shadow: 0 0 80px #6C63FF;
+        border-radius: 0 20px 0;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF
+    }
+
+    .btn {
+        background-color: #6C63FF;
+        color: white;
+    }
+</style>
+
+
+<div class="login">
+    <h2>Update a Train</h2>
+    <form method="post" id="form">
+        <!-- Train ID -->
+        <!-- <div class="form-group">
+            <label for="trainId">Train ID:</label>
+            <input type="text" class="form-control" id="trainId" value="@Model.Id" name="trainId" required readonly>
+        </div>-->
+        <!-- Train Number -->
+        <div class="form-group">
+            <label for="trainId">Train Number:</label>
+            <input type="text" class="form-control" id="trainNumber" value="@Model.TrainNumber" name="trainId" pattern="[0-9]{6}" required title="Enter a valid train ID (6 digits)" readonly>
+        </div>
+
+        <!-- Departure Place -->
+        <div class="form-group">
+            <label for="departurePlace">Departure Place:</label>
+            <input type="text" class="form-control" id="departurePlace" placeholder="Enter Departure Place" value="@Model.FromLoc" name="departurePlace" required>
+        </div>
+
+        <!-- Arrival Place -->
+        <div class="form-group">
+            <label for="arrivalPlace">Arrival Place:</label>
+            <input type="text" class="form-control" id="arrivalPlace" placeholder="Enter Arrival Plae" value="@Model.ToLoc" name="arrivalPlace" required>
+        </div>
+
+        <!-- Window Seats -->
+        <div class="form-group">
+            <label for="windowSeats">Window Seats:</label>
+            <input type="text" class="form-control" id="windowSeats" placeholder="Enter Number of window seats" value="@Model.AvailableWindowSeat" name="windowSeats" pattern="[0-9]+" required title="Enter a valid number">
+        </div>
+
+        <!-- Normal Seats -->
+        <div class="form-group">
+            <label for="normalSeats">Normal Seats:</label>
+            <input type="text" class="form-control" id="normalSeats" placeholder="Enter Number of normal seats" value="@Model.AvailableNormalSeat" name="normalSeats" pattern="[0-9]+" required title="Enter a valid number">
+        </div>
+
+        <!-- Window Seat Price -->
+        <div class="form-group">
+            <label for="windowSeatPrice">Window Seat Price:</label>
+            <input type="text" class="form-control" id="windowSeatPrice" placeholder="Enter Price of Window seat" value="@Model.WindowSeatPrice" name="windowSeatPrice" pattern="\d+(\.\d{1,2})?" required title="Enter a valid decimal number">
+        </div>
+
+        <!-- Normal Seat Price -->
+        <div class="form-group">
+            <label for="normalSeatPrice">Normal Seat Price:</label>
+            <input type="text" class="form-control" id="normalSeatPrice" placeholder="Enter Price of Normal seat" value="@Model.NormalSeatPrice" name="normalSeatPrice" pattern="\d+(\.\d{1,2})?" required title="Enter a valid decimal number">
+        </div>
+
+        <!-- Status -->
+        <div class="form-group">
+            <label for="status">Availability Status:</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Available">Available</option>
+                <option value="Not Available">Not Available</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script src="~/js/Admin/Update.js"></script>
+

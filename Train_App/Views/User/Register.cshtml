@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .login {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        padding-top: 0;
+        border: 1px solid #6C63FF;
+        box-shadow: 0 0 80px #6C63FF;
+        border-radius: 0 20px 0;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF
+    }
+
+    .btn {
+        background-color: #6C63FF;
+        color: white;
+    }
+
+    
+</style>
+
+<div class="login">
+    <h2>User Registration</h2> <br />
+    <form class="form-horizontal" method="post" id="registrationForm" role="form">
+        <!-- Name -->
+        @*<div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">*@
+                <input type="text" class="form-control" id="inputName" placeholder="Enter your name" required> <br />
+            @*</div>
+        </div>*@
+
+        <!-- Phone Number -->
+        @*<div class="form-group">
+            <label for="inputPhoneNumber" class="col-sm-2 control-label">Phone Number</label>
+            <div class="col-sm-10">*@
+                <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="Enter your phone number" pattern="[6-9][0-9]{9}" title="Please enter a valid 10-digit phone number starting from 6 to 9" required> <br />
+            @*</div>
+        </div>*@
+
+        <!-- Password -->
+        @*<div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">*@
+                <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" title="Password must be at least 8 characters, include 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character" required> <br />
+            @*</div>
+        </div>*@
+
+        <!-- Wallet Amount -->
+        @*<div class="form-group">
+            <label for="inputWalletAmount" class="col-sm-2 control-label">Wallet Amount</label>
+            <div class="col-sm-10">*@
+                <input type="text" class="form-control" id="inputWalletAmount" placeholder="Enter your wallet amount" pattern="^(?!-0$)([0-9]+(\.[0-9]+)?)$" title="Please enter a positive number" required> <br />
+            @*</div>
+        </div>*@
+
+        <!-- Submit Button -->
+        @*<div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">*@
+                <button type="submit" class="btn ">Register</button>
+            @*</div>
+        </div>*@
+    </form>
+</div>
+
+<script src="~/js/User/Register.js"></script>

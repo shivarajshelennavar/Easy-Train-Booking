@@ -1,0 +1,68 @@
+﻿@model UserDetails
+@{
+    ViewData["Title"] = "MyDetails";
+    Layout = "_UserLayout";
+}
+
+@*<div class="panel-info">
+    <div class="panel-heading">
+        My Details
+    </div>
+    <div class="panel-body">
+        Name: @Model.Name <br />
+        Phone Number: @Model.Number<br />
+        Password: @Model.Password<br />
+        Wallet: @Model.Wallet<br />
+    </div>
+</div>*@
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .parent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+    }
+
+    .card {
+        display: flex;
+        /* border: 1px solid black; */
+        padding: 14px 32px;
+        border-radius: 20px;
+        width: 60vw;
+        justify-content: space-around;
+        align-items: center
+    }
+
+    .content h3 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF;
+    }
+
+    .pfp{
+        width: 300px;
+    }
+
+    img{
+        width: 100%
+    }
+</style>
+
+<div class="parent">
+    <div class="card">
+        <div class="content">
+            <h3>My Details</h3>
+            <div class="details">
+                <p><strong>Name : </strong> @Model.Name</p>
+                <p><strong>Phone Number : </strong>@Model.Number</p>
+                <p><strong>Password : </strong>@Model.Password</p>
+                <p><strong>Wallet : </strong>@Model.Wallet</p>
+            </div>
+        </div>
+        <div class="pfp">
+            <img src="~/images/user_profile.svg"/>
+        </div>
+    </div>
+</div>

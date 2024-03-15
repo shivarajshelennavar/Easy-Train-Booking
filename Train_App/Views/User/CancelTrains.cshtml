@@ -1,0 +1,114 @@
+﻿@model IEnumerable<TrainDetails>
+@{
+    ViewData["Title"] = "CancelTrains";
+    Layout = "_UserLayout";
+}
+
+<h2>Cancel Trains</h2>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .train {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        padding: 10px 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 50px lightgrey;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF;
+    }
+
+    .special {
+        color: #6C63FF;
+    }
+    .book {
+        background-color: #d9534f;
+        color: white;
+        padding: 7px 16px;
+        margin: auto 20px;
+        border-radius: 10px;
+        border: none;
+    }
+
+</style>
+
+@if (Model == null)
+{
+    <h2>There are no Trains to display</h2>
+}
+else
+{
+
+    @foreach (var train in Model)
+    {
+        <div class="train">
+            <div class="train-no">
+                <p><strong class="special">Train No</strong></p>
+                <p>@train.TrainNumber</p>
+            </div>
+            <div>
+                <p><strong class="special">Departure</strong></p>
+                <p class="from">@train.FromLoc</p>
+            </div>
+            <div>
+                <p><strong class="special">Arrival</strong></p>
+                <p class="to">@train.ToLoc</p>
+            </div>
+            <div>
+                <p><strong class="special">Total Price</strong></p>
+                <p class="to">@train.TotalPrice</p>
+            </div>
+            <div>
+                <p><strong class="special">Dates</strong></p>
+                <p>Booking Date: @train.BookingDate</p>
+                <p>Journey Date: @train.JourneyDate</p>
+            </div>
+            <div class="Seats">
+                <p><strong class="special">Seats</strong></p>
+                <p>Seat Type: @train.SeatType</p>
+                <p>Count: @train.SeatCount</p>
+            </div>
+            <button class="book" onclick="cancelTrain(@train.Id)">Cancel</button>
+        </div>
+        <script src="~/js/User/CancelTrains.js"></script>
+    }
+
+    @*<table class="table table-responsive table-hover">
+            <thead>
+                <tr class="info">
+                    <th>Train Number</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Total Price</th>
+                    <th>Booking Date</th>
+                    <th>Journey Date</th>
+                    <th>Seat Type</th>
+                    <th>Seat Count</th>
+                    <th>Cancel</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var train in Model)
+                {
+                    <tr>
+                        <td>@train.TrainNumber</td>
+                        <td>@train.FromLoc</td>
+                        <td>@train.ToLoc</td>
+                        <td>@train.TotalPrice</td>
+                        <td>@train.BookingDate</td>
+                        <td>@train.JourneyDate</td>
+                        <td>@train.SeatType</td>
+                        <td>@train.SeatCount</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="cancelTrain(@train.Id)">Cancel</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>*@
+}

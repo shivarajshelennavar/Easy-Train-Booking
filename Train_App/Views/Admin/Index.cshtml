@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .hero {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .hero h1, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    .special {
+        color: #6C63FF;
+    }
+
+    .hero-img {
+        padding-top: 40px;
+    }
+</style>
+
+<div class="hero">
+    <div class="row">
+        <!-- Left Content -->
+        <div class="col-md-6 content">
+            <h1>
+                Welcome to <span class="special">Admin Portal</span>
+            </h1>
+            <h3>
+                Seamlessly Manage Your Train Booking Platform <br />
+                Explore Powerful Tools for <span class="special">Effortless Administration</span>
+            </h3>
+
+            <h4>You can Perform following <span class="special">operations: </span></h4>
+            <a asp-area="" asp-controller="Admin" asp-action="AddTrain" class="btn" style="background-color: #6C63FF">Add Train</a>
+            <a asp-area="" asp-controller="Admin" asp-action="UpdateTrains" class="btn btn-danger" >Update or Delete a Train</a>
+
+        </div>
+
+        <!-- Right Image -->
+        <div class="col-md-6 hero-img">
+            <img src="~/images/admin_home.svg" class="img-responsive" alt="Image">
+        </div>
+    </div>
+</div>

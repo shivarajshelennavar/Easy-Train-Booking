@@ -1,0 +1,36 @@
+﻿@model IEnumerable<UserDetails>
+@{
+    ViewData["Title"] = "ShowUsers";
+    Layout = "_AdminLayout";
+}
+
+<h2>Users</h2>
+
+@if (Model == null)
+{
+    <h2>There are no Trains to display</h2>
+}
+else
+{
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr class="info">
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>User Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Number</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

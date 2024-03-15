@@ -1,0 +1,93 @@
+﻿@model IEnumerable<TrainDetails>
+@{
+    ViewData["Title"] = "ShowTrains";
+    Layout = "_AdminLayout";
+}
+
+<h2>All Trains</h2>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .train {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+        padding: 10px 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 50px lightgrey;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF;
+    }
+
+    .special {
+        color: #6C63FF;
+    }
+</style>
+
+@if (Model == null)
+{
+    <h2>There are no Trains to display</h2>
+}
+else
+{
+    @foreach (var train in Model)
+    {
+        <div class="train">
+            <div class="train-no">
+                <p><strong class="special">Train No</strong></p>
+                <p>@train.TrainNumber</p>
+            </div>
+            <div>
+                <p><strong class="special">Departure</strong></p>
+                <p class="from">@train.FromLoc</p>
+            </div>
+            <div>
+                <p><strong class="special">Arrival</strong></p>
+                <p class="to">@train.ToLoc</p>
+            </div>
+            <div class="Seats">
+                <p><strong class="special">Seats</strong></p>
+                <p>Window Seats/Price: @train.AvailableWindowSeat/@train.WindowSeatPrice</p>
+                <p>Normal Seats/Price: @train.AvailableNormalSeat/@train.NormalSeatPrice</p>
+            </div>
+            <div class="Seats">
+                <p><strong class="special">Availability</strong></p>
+                <p>@train.AvailabiltyStatus</p>
+            </div>
+        </div>
+    }
+
+    @*<table class="table table-responsive table-hover">
+        <thead>
+            <tr class="info">
+                <th>Train Number</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Window Seats</th>
+                <th>Noraml Seats</th>
+                <th>Window Seat Price</th>
+                <th>Normal Seat Price</th>
+                <th>Avalibilty Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var train in Model)
+            {
+                <tr>
+                    <td>@train.TrainNumber</td>
+                    <td>@train.FromLoc</td>
+                    <td>@train.ToLoc</td>
+                    <td>@train.AvailableWindowSeat</td>
+                    <td>@train.AvailableNormalSeat</td>
+                    <td>@train.WindowSeatPrice</td>
+                    <td>@train.NormalSeatPrice</td>
+                    <td>@train.AvailabiltyStatus</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+}

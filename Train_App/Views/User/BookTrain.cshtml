@@ -1,0 +1,64 @@
+﻿@model TrainDetails
+@{
+    ViewData["Title"] = "BookTrain";
+    Layout = "_UserLayout";
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .login {
+        max-width: 800px;
+        margin: 10px auto 0;
+        padding: 30px;
+        padding-top: 0;
+        border: 1px solid #6C63FF;
+        box-shadow: 0 0 80px #6C63FF;
+        border-radius: 0 20px 0;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF
+    }
+
+    .btn {
+        background-color: #6C63FF;
+        color: white;
+    }
+</style>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Train Details
+    </div>
+    <div class="panel-body">
+        <p><strong>Train Number</strong> : @Model.TrainNumber</p>
+        <p><strong>Departure</strong> : @Model.FromLoc</p>
+        <p><strong>Arrival</strong> : @Model.ToLoc</p>
+        <p><strong>Window Seats</strong> : @Model.AvailableWindowSeat</p>
+        <p><strong>Normal Seats</strong> : @Model.AvailableNormalSeat</p>
+        <p><strong>Window seat price</strong> : @Model.WindowSeatPrice</p>
+        <p><strong>Normal seat price</strong> : @Model.NormalSeatPrice</p>
+
+        <label for="seatType">Select Seat Type:</label>
+        <select id="seatType" onchange="showCost(@Model.AvailableNormalSeat, @Model.AvailableWindowSeat, @Model.WindowSeatPrice, @Model.NormalSeatPrice)">
+            <option selected value="Window">Window Seat</option>
+            <option value="Normal">Normal Seat</option>
+        </select>
+
+        <label for="seats" class="col-form-label">Enter number of seats you want to book?</label>
+        <input type="text" id="enteredCount" class="form-control" value="" placeholder="Enter the quantity " pattern="^[1-9]\d*$" title="Please enter a valid positive number of seats" oninput="showCost(@Model.AvailableNormalSeat, @Model.AvailableWindowSeat, @Model.WindowSeatPrice, @Model.NormalSeatPrice)" />
+
+        <label for="seats" class="col-form-label">Choose your journey date</label>
+        <input type="date" id="inputDate" class="form-control" required /> 
+
+        <p class="cost"></p>
+    </div>
+    <div class="panel-footer">
+        Are you sure you want to purchase?
+        <button class="btn btn-success book" onclick="bookTicket(@Model.TrainNumber)" disabled>Yes, Book</button>
+        <a class="btn btn-danger" asp-controller="User" asp-action="ShowTrains">No, Go Back</a>
+    </div>
+</div>
+<script src="~/js/User/BookTrain.js"></script>

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .login {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        padding-top: 0;
+        border: 1px solid #6C63FF;
+        box-shadow: 0 0 80px #6C63FF;
+        border-radius: 0 20px 0;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF
+    }
+
+    .btn {
+        background-color: #6C63FF;
+        color: white;
+    }
+
+        .btn:hover {
+            /*background-color: #6C63FF;
+        color: white;*/
+        }
+
+    .msg{
+        margin: 10px 0;
+    }
+
+    .msg a {
+        color: black;
+    }
+
+    .msg a:hover{
+        color: #6C63FF;
+        text-decoration: none;
+    }
+</style>
+
+<div class="login">
+    <h2>User Login</h2> <br />
+    <form class="form-horizontal" id="form" method="post" role="form">
+        <!-- Phone Number or Vehicle Number -->
+        @*<div class="form-group">
+            <label for="inputNumber" class="col-sm-2 control-label">Phone Number </label>
+            <div class="col-sm-10">*@
+                <input type="text" class="form-control" id="inputNumber" pattern="^(?:\d{10}|[A-Z]{2}\d{2}[A-Z]{2}\d{4})$" placeholder="Enter your phone number" required> <br />
+            @*</div>
+        </div>*@
+
+        <!-- Password -->
+        @*<div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">*@
+                <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" required><br />
+            @*</div>
+        </div>*@
+
+        <!-- Submit Button -->
+        @*<div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">*@
+                <button type="submit" class="btn">Login</button>
+            @*</div>
+        </div>*@
+    </form>
+    <div class="msg">
+        Not Registered Yet? <a asp-action="Register" class="alert-link">Register Here</a>
+    </div>
+</div>
+<script src="~/js/User/Login.js"></script>
+

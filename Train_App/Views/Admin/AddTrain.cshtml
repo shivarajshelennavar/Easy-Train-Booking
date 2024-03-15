@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "AddTrain";
+    Layout = "_AdminLayout";
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins&display=swap');
+
+    .login {
+        max-width: 800px;
+        margin: 10px auto 0;
+        padding: 30px;
+        padding-top: 0;
+        border: 1px solid #6C63FF;
+        box-shadow: 0 0 80px #6C63FF;
+        border-radius: 0 20px 0;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #6C63FF
+    }
+
+    .btn {
+        background-color: #6C63FF;
+        color: white;
+    }
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<div class="login">
+    <h2>Add a new Train</h2>
+    <form method="post" id="form">
+
+        <!-- Train Number -->
+        @*<div class="form-group">
+        <label for="trainId">Train Number:</label>*@
+        <input type="text" class="form-control" id="trainNumber" name="trainId" pattern="[0-9]{6}" placeholder="Enter Train Number" required title="Enter a valid train ID (6 digits)"> <br />
+        @*</div>*@
+
+        <!-- Departure Place -->
+        @*<div class="form-group">
+            <label for="departurePlace">Departure Place:</label>*@
+            <input type="text" class="form-control" id="departurePlace" name="departurePlace" placeholder="Enter Departure Place" required><br />
+        @*</div>*@
+
+        <!-- Arrival Place -->
+        @*<div class="form-group">
+            <label for="arrivalPlace">Arrival Place:</label>*@
+            <input type="text" class="form-control" id="arrivalPlace" placeholder="Enter Arrival Plae" name="arrivalPlace" required><br />
+        @*</div>*@
+
+        <!-- Window Seats -->
+        @*<div class="form-group">
+            <label for="windowSeats">Window Seats:</label>*@
+            <input type="text" class="form-control" id="windowSeats" name="windowSeats" pattern="[0-9]+" placeholder="Enter Number of window seats" required title="Enter a valid number"><br />
+        @*</div>*@
+
+        <!-- Normal Seats -->
+        @*<div class="form-group">
+            <label for="normalSeats">Normal Seats:</label>*@
+            <input type="text" class="form-control" id="normalSeats" name="normalSeats" placeholder="Enter Number of normal seats" pattern="[0-9]+" required title="Enter a valid number"><br />
+        @*</div>*@
+
+        <!-- Window Seat Price -->
+        @*<div class="form-group">
+            <label for="windowSeatPrice">Window Seat Price:</label>*@
+            <input type="text" class="form-control" id="windowSeatPrice" name="windowSeatPrice" placeholder="Enter Price of Window seat" pattern="\d+(\.\d{1,2})?" required title="Enter a valid decimal number"><br />
+        @*</div>*@
+
+        <!-- Normal Seat Price -->
+        @*<div class="form-group">
+            <label for="normalSeatPrice">Normal Seat Price:</label>*@
+            <input type="text" class="form-control" id="normalSeatPrice" name="normalSeatPrice" placeholder="Enter Price of Normal seat" pattern="\d+(\.\d{1,2})?" required title="Enter a valid decimal number"><br />
+        @*</div>*@
+
+        <!-- Status -->
+        <div class="form-group">
+            <label for="status">Availability Status:</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Available">Available</option>
+                <option value="Not Available">Not Available</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+
+<script src="~/js/Admin/AddTrain.js"></script>
+
