@@ -27,6 +27,7 @@ Overall, our Train Booking System aims to provide a user-friendly interface for 
 For passengers, the User Module offers a seamless experience for booking train seats to their desired destinations. Users can explore various destinations served by our trains and select their preferred one. Once the destination is chosen, they can easily browse through available seat types, including first class, second class, or sleeper, to book their preferred seats for the journey.
 
 Furthermore, passengers can conveniently manage their bookings, including cancellation if their plans change. The refund for cancellations is determined based on the number of days left before the departure date, ensuring fair treatment for all passengers.
+![image](https://github.com/shivarajshelennavar/Easy-Train-Booking/assets/54432387/5c2b8b9a-20ec-489d-b333-062f6bc59189)
 
 ![image](https://github.com/shivarajshelennavar/Easy-Train-Booking/assets/54432387/333aad89-a083-47aa-8a08-5e2db7c568a6)
 
